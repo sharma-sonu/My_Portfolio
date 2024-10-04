@@ -1,21 +1,2 @@
-# Ignore node_modules
 node_modules/
-
-# Ignore log files
-*.log
-
-# Ignore environment variables
-.env
-.cache
-
-# Ignore temporary files
-temp/
-*.tmp
-
-# Ignore OS files
-node_modules/
-node_modules/.cache/
-*.pack
-node_modules/
-node_modules/.cache/
-*.pack
+.cache/
