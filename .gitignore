@@ -6,6 +6,7 @@ node_modules/
 
 # Ignore environment variables
 .env
+.cache
 
 # Ignore temporary files
 temp/
