@@ -1,3 +1,4 @@
+// 
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import vs from "../../../images/Vs.png";
@@ -9,9 +10,20 @@ import pg from "../../../images/pg.png";
 import pm from "../../../images/pm.png";
 import chrome from "../../../images/chorme.svg";
 import { Link } from "react-router-dom";
-import Zoom from "react-reveal/Zoom";
+import { useSpring, animated } from "react-spring";
 
 export default function Toolkit() {
+  // Animation for the title
+  const titleSpring = useSpring({ opacity: 1, from: { opacity: 0 }, config: { duration: 1000 } });
+  
+  // Animation for the icons
+  const iconSpring = useSpring({
+    opacity: 1,
+    transform: "translateY(0)",
+    from: { opacity: 0, transform: "translateY(20px)" },
+    config: { duration: 1000 },
+  });
+
   return (
     <div>
       <div className="mt-5 d-flex flex-row justify-content-center">
@@ -21,47 +33,29 @@ export default function Toolkit() {
         <Link className="btn btn-primary me-3" to="/personalskill">
           Personal Skill
         </Link>
-        <Link className="btn btn-primary " to="/toolkit">
+        <Link className="btn btn-primary" to="/toolkit">
           Toolkit
         </Link>
       </div>
-      <Zoom left cascade>
-        <h1 className="mt-4">Tools I Use</h1>
-      </Zoom>
+      <animated.h1 style={titleSpring} className="mt-4">Tools I Use</animated.h1>
       <Container className="mt-4">
         <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-          <Col xs={4} md={2} className="tech-icons">
-            <img src={vs} alt="" style={{ width: "85%", height: "85%" }} />
-          </Col>
-          <Col xs={4} md={2} className="tech-icons">
-            <img src={pc} alt="" style={{ width: "85%", height: "85%" }} />
-          </Col>
-          <Col xs={4} md={2} className="tech-icons">
-            <img src={git} alt="" style={{ width: "85%", height: "85%" }} />
-          </Col>
-          <Col xs={4} md={2} className="tech-icons">
-            <img
-              src={github}
-              alt=""
-              style={{
-                width: "85%",
-                height: "85%",
-                filter: "grayscale(1) invert(1)",
-              }}
-            />
-          </Col>
-          <Col xs={4} md={2} className="tech-icons">
-            <img src={cb} alt="" style={{ width: "95%", height: "95%" }} />
-          </Col>
-          <Col xs={4} md={2} className="tech-icons">
-            <img src={pg} alt="" style={{ width: "95%", height: "95%" }} />
-          </Col>
-          <Col xs={4} md={2} className="tech-icons">
-            <img src={pm} alt="" style={{ width: "95%", height: "95%" }} />
-          </Col>
-          <Col xs={4} md={2} className="tech-icons">
-            <img src={chrome} alt="" style={{ width: "95%", height: "95%" }} />
-          </Col>
+          {[
+            vs, pc, git, github, cb, pg, pm, chrome
+          ].map((imageSrc, index) => (
+            <Col xs={4} md={2} className="tech-icons" key={index}>
+              <animated.img
+                src={imageSrc}
+                alt=""
+                style={{
+                  width: "85%",
+                  height: "85%",
+                  filter: index === 3 ? "grayscale(1) invert(1)" : "none", // Apply filter to GitHub icon
+                  ...iconSpring // Apply the icon animation
+                }}
+              />
+            </Col>
+          ))}
         </Row>
       </Container>
     </div>
