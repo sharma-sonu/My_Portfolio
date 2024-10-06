@@ -34,7 +34,7 @@ export default function SocialMedia() {
           {/* GitHub */}
           <Col md={3}>
             <a
-              href="https://github.com/sharma-sonu"
+              href="#" // https://github.com/sharma-sonu
               target="_blank"
               rel="noreferrer"
               className="icon-colour home-social-icons"
