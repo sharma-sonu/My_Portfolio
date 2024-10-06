@@ -300,10 +300,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from "@react-spring/web"; // Ensure correct import
 
 export default function TechnicalSkill() {
+  // Animation for the title
   const titleSpring = useSpring({ opacity: 1, from: { opacity: 0 }, config: { duration: 1000 } });
+
+  // Animation for each skill
   const skillSpring = useSpring({ opacity: 1, from: { opacity: 0 }, config: { duration: 1000 }, delay: 200 });
 
   return (
@@ -317,7 +320,7 @@ export default function TechnicalSkill() {
       <div className="mt-5">
         <Container>
           <Row className="g-5">
-            {[
+            {[ 
               { title: 'C', percentage: '50%', color: '#fe3e57', value: '50' },
               { title: 'Java', percentage: '75%', color: '#54faae', value: '75' },
               { title: 'HTML', percentage: '90%', color: '#39c4ff', value: '90' },

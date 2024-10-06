@@ -110,7 +110,7 @@ import Particle from "../../Particle";
 import Typing from "./Typing";
 import Tilt from "react-parallax-tilt";
 import AboutmeContainer from "../../components/aboutme/aboutmeContainer";
-import { useSpring, animated } from "react-spring"; // Import react-spring hooks
+import { useSpring, animated } from "@react-spring/web"; // Updated import for react-spring
 import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { FaLinkedinIn, FaGoogle } from "react-icons/fa";
 import Certification from "../../components/certificate/Certification";

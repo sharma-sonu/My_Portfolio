@@ -70,7 +70,7 @@ import Particle from "../../Particle";
 import pdf from "../../assets/sonu_Resume (2).pdf";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated } from "@react-spring/web";  // Updated import
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 

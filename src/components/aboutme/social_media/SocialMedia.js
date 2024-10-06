@@ -57,11 +57,15 @@ import {
   AiFillLinkedin,
 } from "react-icons/ai";
 import { Container, Row, Col } from "react-bootstrap";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated } from "@react-spring/web"; // Ensure correct import
 
 export default function SocialMedia() {
   // Animation for the title
-  const titleSpring = useSpring({ opacity: 1, from: { opacity: 0 }, config: { duration: 1000 } });
+  const titleSpring = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+    config: { duration: 1000 },
+  });
 
   // Animation for the icons
   const iconSpring = useSpring({

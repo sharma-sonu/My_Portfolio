@@ -57,15 +57,16 @@
 
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { useSpring, animated } from "react-spring";
-import info_java_certi from "../../images/JavaFondationCertification.jpg"; // certification_1
+import { useSpring, animated } from "@react-spring/web"; // Ensure correct import
+import info_java_certi from "../../images/JavaFondationCertification.jpg"; // Certification_1
 import ufm from "../../images/DBMS_1.jpg"; // Certification_2
 import ufn from "../../images/DBMS_2.jpg"; // Certification_3
-import cbta from "../../images/CBT&A.pdf";
+import cbta from "../../images/CBT&A.pdf"; // Link for one of the certifications
 import { Link } from "react-router-dom";
 import { HiArrowRight } from "react-icons/hi";
 
 export default function Certification() {
+  // Animation for fading in the title and the certification cards
   const fadeIn = useSpring({ opacity: 1, from: { opacity: 0 } });
 
   return (
@@ -80,24 +81,26 @@ export default function Certification() {
             </Col>
             <Col ms={12} className="mt-3">
               <Row className="g-5">
-                {[{
-                  img: info_java_certi,
-                  title: "Java Foundation Certification",
-                  subtitle: "- Infosys Springboard",
-                  link: "#"
-                },
-                {
-                  img: ufm,
-                  title: "DBMS_1",
-                  subtitle: "- Infosys Springboard",
-                  link: cbta
-                },
-                {
-                  img: ufn,
-                  title: "DBMS_2",
-                  subtitle: "- Infosys Springboard",
-                  link: "#"
-                }].map((cert, index) => (
+                {[
+                  {
+                    img: info_java_certi,
+                    title: "Java Foundation Certification",
+                    subtitle: "- Infosys Springboard",
+                    link: "#",
+                  },
+                  {
+                    img: ufm,
+                    title: "DBMS_1",
+                    subtitle: "- Infosys Springboard",
+                    link: cbta,
+                  },
+                  {
+                    img: ufn,
+                    title: "DBMS_2",
+                    subtitle: "- Infosys Springboard",
+                    link: "#",
+                  },
+                ].map((cert, index) => (
                   <Col md={4} key={index}>
                     <animated.div style={fadeIn}>
                       <div className="cert-card">

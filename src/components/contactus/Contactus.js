@@ -173,11 +173,10 @@
 //   );
 // }
 
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { useSpring, animated } from "react-spring"; // Updated import
+import { useSpring, animated } from "@react-spring/web"; // Updated import
 import axios from "axios";
-import { useState } from "react";
 import { AiOutlineSend } from "react-icons/ai";
 import { FiPhone, FiAtSign } from "react-icons/fi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
@@ -193,7 +192,7 @@ export default function Contactus() {
     e.preventDefault();
 
     if (!(formData.name && formData.email && formData.message)) {
-      alert("Something went wrong!");
+      alert("Please fill all fields before submitting!");
       return;
     }
 
@@ -207,7 +206,7 @@ export default function Contactus() {
       alert(`Thanks ${formData.name}, I will shortly connect with you!`);
     } catch (error) {
       console.error("Error submitting the form:", error);
-      alert("Backend Server was not Running while submitting the form.");
+      alert("Backend server was not running while submitting the form.");
     }
 
     setFormData({});
@@ -236,7 +235,7 @@ export default function Contactus() {
                 <Col md={4}>
                   <animated.div style={springProps}>
                     <div className="contacts-form" data-aos="fade-up">
-                      <form>
+                      <form onSubmit={handleSubmit}> {/* Updated to handle submit event */}
                         <div className="input-container d-flex flex-column">
                           <label htmlFor="username" className="label-class">
                             Full Name
@@ -281,11 +280,7 @@ export default function Contactus() {
                         </div>
 
                         <div className="submit-btn">
-                          <button
-                            type="submit"
-                            className="submitBtn"
-                            onClick={handleSubmit}
-                          >
+                          <button type="submit" className="submitBtn">
                             Submit
                             <AiOutlineSend className="send-icon" />
                           </button>
@@ -297,7 +292,7 @@ export default function Contactus() {
                 <Col md={7}>
                   <div className="contacts-details">
                     <a
-                      href={`mailto:mdtonmoy13.mt@gmail.com`}
+                      href="mailto:mdtonmoy13.mt@gmail.com"
                       className="personal-details"
                     >
                       <div className="detailsIcon">
@@ -308,7 +303,7 @@ export default function Contactus() {
                       </p>
                     </a>
                     <a
-                      href={`Call:+91 9905867487`}
+                      href="tel:+919905867487" // Fixed to use tel protocol for phone links
                       className="personal-details"
                     >
                       <div className="detailsIcon">
@@ -316,22 +311,17 @@ export default function Contactus() {
                       </div>
                       <p style={{ color: "#fbd9ad" }}>+91 9905867487</p>
                     </a>
-                    <a
-                      href="#"
-                      className="personal-details"
-                    >
-                      <div className="personal-details">
-                        <div className="detailsIcon">
-                          <HiOutlineLocationMarker />
-                        </div>
-                        <p style={{ color: "#fbd9ad" }}>
-                          Bhopal, Madhya Pradesh
-                        </p>
+                    <div className="personal-details">
+                      <div className="detailsIcon">
+                        <HiOutlineLocationMarker />
                       </div>
-                    </a>
+                      <p style={{ color: "#fbd9ad" }}>
+                        Bhopal, Madhya Pradesh
+                      </p>
+                    </div>
                   </div>
                   <div className="contact-map">
-                    {/* You can uncomment and include your Google Map iframe here */}
+                    {/* Uncomment and include your Google Map iframe here */}
                   </div>
                 </Col>
               </Row>

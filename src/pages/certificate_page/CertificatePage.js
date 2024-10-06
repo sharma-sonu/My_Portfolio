@@ -266,7 +266,7 @@
 
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { useSpring, animated } from "react-spring"; // Import react-spring hooks
+import { useSpring, animated } from "@react-spring/web"; // Updated import
 import ucsc from "../../images/networking_internship.jpg";
 import ufm from "../../images/oasis.jpg";
 import Cisco_networking from "../../images/Cisco_networking.jpg";

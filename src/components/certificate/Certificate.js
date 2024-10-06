@@ -90,7 +90,7 @@ import problem_solving from "../../images/oasis.jpg";
 import python from "../../images/Essay_Writing.jpg";
 import iq from "../../images/Cisco_1.jpg";
 import computer from "../../images/cisco_2.jpg";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated } from "react-spring/web";
 
 export default function Certificate() {
   // Animation for each certificate image

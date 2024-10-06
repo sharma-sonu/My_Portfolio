@@ -1,7 +1,7 @@
-// import React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from '@react-spring/web'; // Ensure correct import for react-spring
 
 export default function PersonalSkill() {
   const titleSpring = useSpring({ opacity: 1, from: { opacity: 0 }, config: { duration: 1000 } });
@@ -38,7 +38,7 @@ export default function PersonalSkill() {
                       aria-valuemin="0"
                       aria-valuemax="100"
                       style={{ width: skill.percentage, backgroundColor: skill.color }}
-                    ></div>
+                    />
                   </div>
                   <h2 style={{ color: skill.color, fontSize: '25px', marginTop: '13px', fontWeight: 700 }}>
                     {skill.title}

@@ -186,11 +186,11 @@ import {
   DiMysql,
   DiNodejs,
 } from "react-icons/di";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated } from "@react-spring/web";  // Updated import
 
 function TechnicalJourney() {
   const springProps = useSpring({ opacity: 1, from: { opacity: 0 }, config: { duration: 1000 } });
-  
+
   return (
     <animated.div style={springProps} className="mt-5">
       <div>

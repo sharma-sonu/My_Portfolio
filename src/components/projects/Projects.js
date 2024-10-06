@@ -293,7 +293,7 @@
 
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { useSpring, animated } from "react-spring"; // Import useSpring and animated from react-spring
+import { useSpring, animated } from "@react-spring/web"; // Updated import
 import nyc from "../../images/nyc.png";
 import ci from "../../images/onboarding.jpeg";
 import hd from "../../images/hd.jpeg";
@@ -303,12 +303,48 @@ import { Link } from "react-router-dom";
 import { HiArrowRight } from "react-icons/hi";
 
 export default function Projects() {
-  // Create a spring animation for each project
+  // Create a spring animation for the project header
   const projectSpring = useSpring({
     opacity: 1,
     from: { opacity: 0 },
     config: { duration: 500 },
   });
+
+  // Create an array of projects for easier rendering
+  const projects = [
+    {
+      id: 1,
+      title: "Heart Beat Monitoring System using Arduino",
+      image: nyc,
+      description: "A heartbeat monitoring system using Arduino detects pulse signals via a sensor, processes them, and displays heart rate in beats per minute (BPM) on an LCD or serial monitor.",
+      languages: "C, Arduino, Touch Sensor",
+      github: "#github code", // Placeholder for the actual GitHub link
+    },
+    {
+      id: 2,
+      title: "ATM Machine",
+      image: hd,
+      description: "Use of AI and Machine Learning: Artificial intelligence and machine learning are already being used in healthcare to help predict heart disease. In the future, these technologies could become more advanced, enabling more accurate predictions of heart disease risk.",
+      languages: "Java, Java Swing, OOPs",
+      github: "https://github.com/MD-MAFUJUL-HASAN/Machine_Learning/tree/main/Heart%20Disease%20Prediction",
+    },
+    {
+      id: 3,
+      title: "Receipt Calculator",
+      image: ci,
+      description: "A Payroll management System with feature like generate payslip & reports. It manages salaries, leaves, branches, employees, designations, shifts, holidays and employee attendance. It has chat application so internal employees can use that feature.",
+      languages: "Java, OOPs",
+      github: "https://github.com/MD-MAFUJUL-HASAN/Online-Payroll-Management-System",
+    },
+    {
+      id: 4,
+      title: "Personal Portfolio",
+      image: pp,
+      description: "Welcome to my personal portfolio. Explore my work, skills, and achievements in a concise and visually appealing format. Get a glimpse of my expertise and creativity.",
+      languages: "HTML, CSS, React, JavaScript",
+      github: "https://github.com/MD-MAFUJUL-HASAN/Personal-Portfolio",
+    },
+  ];
 
   return (
     <div>
@@ -321,105 +357,50 @@ export default function Projects() {
               </animated.h1>
             </Col>
 
-            {/* Project 1 */}
-            <Col md={3}>
-              <animated.div key={1} className="singleProject" style={{ ...projectSpring, backgroundColor: "rgb(142 70 186 / 31%)", border: "1px solid" }}>
-                <div className="projectContent">
-                  <h5 id={"first"} style={{ color: "#fbd9ad" }}>
-                    Heart Beat Monitoring System using Arduino
-                  </h5>
-                  <img src={nyc} alt={nyc} />
-                  <div className="project--showcaseBtn">
-                    <a href={"#github code"} target="_blank" rel="noreferrer" className={"iconBtn"} aria-labelledby={`code`}>
-                      <FaCode id={`code`} className={"icon"} aria-label="Code" />
-                    </a>
+            {/* Render projects dynamically */}
+            {projects.map((project) => (
+              <Col md={3} key={project.id}>
+                <animated.div
+                  className="singleProject"
+                  style={{
+                    ...projectSpring,
+                    backgroundColor: "rgb(142 70 186 / 31%)",
+                    border: "1px solid",
+                  }}
+                >
+                  <div className="projectContent">
+                    <h5 style={{ color: "#fbd9ad" }}>{project.title}</h5>
+                    <img src={project.image} alt={project.title} />
+                    <div className="project--showcaseBtn">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="iconBtn"
+                        aria-labelledby={`code-${project.id}`}
+                      >
+                        <FaCode id={`code-${project.id}`} className="icon" aria-label="Code" />
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <h6>
-                  <p className="project--desc" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
-                    A heartbeat monitoring system using Arduino detects pulse signals via a sensor, processes them, and displays heart rate in beats per minute (BPM) on an LCD or serial monitor.
-                  </p>
-                </h6>
-                <div className="project--lang" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
-                  C, Arduino, Touch Sensor
-                </div>
-              </animated.div>
-            </Col>
+                  <h6>
+                    <p
+                      className="project--desc"
+                      style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}
+                    >
+                      {project.description}
+                    </p>
+                  </h6>
+                  <div
+                    className="project--lang"
+                    style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}
+                  >
+                    {project.languages}
+                  </div>
+                </animated.div>
+              </Col>
+            ))}
 
-            {/* Project 2 */}
-            <Col md={3}>
-              <animated.div key={2} className="singleProject" style={{ ...projectSpring, backgroundColor: "rgb(142 70 186 / 31%)", border: "1px solid" }}>
-                <div className="projectContent">
-                  <h5 id={"first"} style={{ color: "#fbd9ad" }}>
-                    ATM Machine
-                  </h5>
-                  <img src={hd} alt={hd} />
-                  <div className="project--showcaseBtn">
-                    <a href={"https://github.com/MD-MAFUJUL-HASAN/Machine_Learning/tree/main/Heart%20Disease%20Prediction"} target="_blank" rel="noreferrer" className={"iconBtn"} aria-labelledby={`code`}>
-                      <FaCode id={`code`} className={"icon"} aria-label="Code" />
-                    </a>
-                  </div>
-                </div>
-                <h6>
-                  <p className="project--desc" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
-                    Use of AI and Machine Learning: Artificial intelligence and machine learning are already being used in healthcare to help predict heart disease. In the future, these technologies could become more advanced, enabling more accurate predictions of heart disease risk.
-                  </p>
-                </h6>
-                <div className="project--lang" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
-                  Java, Java Swing, OOps
-                </div>
-              </animated.div>
-            </Col>
-
-            {/* Project 3 */}
-            <Col md={3}>
-              <animated.div key={3} className="singleProject" style={{ ...projectSpring, backgroundColor: "rgb(142 70 186 / 31%)", border: "1px solid" }}>
-                <div className="projectContent">
-                  <h5 id={"first"} style={{ color: "#fbd9ad" }}>
-                    Receipt Calculator
-                  </h5>
-                  <img src={ci} alt={ci} />
-                  <div className="project--showcaseBtn">
-                    <a href={"https://github.com/MD-MAFUJUL-HASAN/Online-Payroll-Management-System"} target="_blank" rel="noreferrer" className={"iconBtn"} aria-labelledby={`code`}>
-                      <FaCode id={`code`} className={"icon"} aria-label="Code" />
-                    </a>
-                  </div>
-                </div>
-                <h6>
-                  <p className="project--desc" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
-                    A Payroll management System with feature like generate payslip & reports. It manages salaries, leaves, branches, employees, designations, shifts, holidays and employee attendance. It has chat application so internal employees can use that feature.
-                  </p>
-                </h6>
-                <div className="project--lang" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
-                  Java, OOps
-                </div>
-              </animated.div>
-            </Col>
-
-            {/* Project 4 */}
-            <Col md={3}>
-              <animated.div key={4} className="singleProject" style={{ ...projectSpring, backgroundColor: "rgb(142 70 186 / 31%)", border: "1px solid" }}>
-                <div className="projectContent">
-                  <h5 id={"first"} style={{ color: "#fbd9ad" }}>
-                    Personal Portfolio
-                  </h5>
-                  <img src={pp} alt={pp} />
-                  <div className="project--showcaseBtn">
-                    <a href={"https://github.com/MD-MAFUJUL-HASAN/Personal-Portfolio"} target="_blank" rel="noreferrer" className={"iconBtn"} aria-labelledby={`code`}>
-                      <FaCode id={`code`} className={"icon"} aria-label="Code" />
-                    </a>
-                  </div>
-                </div>
-                <h6>
-                  <p className="project--desc" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
-                    Welcome to my personal portfolio. Explore my work, skills, and achievements in a concise and visually appealing format. Get a glimpse of my expertise and creativity.
-                  </p>
-                </h6>
-                <div className="project--lang" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
-                  HTML, CSS, React, JavaScript
-                </div>
-              </animated.div>
-            </Col>
           </Row>
 
           <div className="blog--viewAll">
