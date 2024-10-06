@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useSpring, animated } from '@react-spring/web'; // Ensure correct import for react-spring
+import { useSpring, animated } from '@react-spring/web'; // import for react-spring
 
 export default function PersonalSkill() {
   const titleSpring = useSpring({ opacity: 1, from: { opacity: 0 }, config: { duration: 1000 } });
@@ -21,10 +21,9 @@ export default function PersonalSkill() {
             {[
               { title: 'Communication Skills', percentage: '75%', color: '#fe3e57' },
               { title: 'Project Management', percentage: '85%', color: '#54faae' },
-              { title: 'Problem Solving', percentage: '81%', color: '#ff8c2f' },
+              { title: 'Problem Solving', percentage: '75%', color: '#ff8c2f' },
               { title: 'Analytical Abilities', percentage: '77%', color: '#f1f965' },
-              { title: 'Organization', percentage: '87%', color: '#ff0173' },
-              { title: 'Creativity', percentage: '79%', color: '#39c4ff' },
+              { title: 'Creativity', percentage: '80%', color: '#39c4ff' },
             ].map((skill, index) => (
               <Col md={4} key={index}>
                 <animated.h1 style={{ ...skillSpring, fontSize: '100px', color: skill.color, fontWeight: 700 }}>
