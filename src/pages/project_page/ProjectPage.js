@@ -1,7 +1,7 @@
 import React from "react";
 import Particle from "../../Particle";
 import { Container, Row, Col } from "react-bootstrap";
-import { useSpring, animated } from "@react-spring/web"; // Updated import
+import { useSpring, animated } from "@react-spring/web";
 import nyc from "../../images/nyc.png";
 import ci from "../../images/onboarding.jpeg";
 import eco from "../../images/eco.png";
