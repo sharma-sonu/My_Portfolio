@@ -326,7 +326,7 @@ export default function Projects() {
       image: hd,
       description: "Use of AI and Machine Learning: Artificial intelligence and machine learning are already being used in healthcare to help predict heart disease. In the future, these technologies could become more advanced, enabling more accurate predictions of heart disease risk.",
       languages: "Java, Java Swing, OOPs",
-      github: "https://github.com/sharma-sonu/ATM-Machine",
+      github: "#",  // https://github.com/sharma-sonu/ATM-Machine
     },
     {
       id: 3,
@@ -334,7 +334,7 @@ export default function Projects() {
       image: ci,
       description: "A Payroll management System with feature like generate payslip & reports. It manages salaries, leaves, branches, employees, designations, shifts, holidays and employee attendance. It has chat application so internal employees can use that feature.",
       languages: "Java, OOPs",
-      github: "https://github.com/sharma-sonu/Temprature-Converter",
+      github: "#", //https://github.com/sharma-sonu/Temprature-Converter
     },
     {
       id: 4,
@@ -342,7 +342,7 @@ export default function Projects() {
       image: pp,
       description: "Welcome to my personal portfolio. Explore my work, skills, and achievements in a concise and visually appealing format. Get a glimpse of my expertise and creativity.",
       languages: "HTML, CSS, React, JavaScript",
-      github: "https://github.com/sharma-sonu/My_Portfolio",
+      github: "#",  // https://github.com/sharma-sonu/My_Portfolio
     },
   ];
 
