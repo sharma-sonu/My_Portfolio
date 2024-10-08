@@ -2,14 +2,17 @@
 
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { useSpring, animated } from "@react-spring/web"; // Updated import
-import axios from "axios";
+import { useSpring, animated } from "@react-spring/web";
 import { AiOutlineSend } from "react-icons/ai";
 import { FiPhone, FiAtSign } from "react-icons/fi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 
 export default function Contactus() {
-  const [formData, setFormData] = useState({}); // Initialize as an object
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,19 +27,31 @@ export default function Contactus() {
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/submitForm",
-        formData
-      );
-      console.log(response.data.message); // Log the response from the backend
+      const scriptURL = "https://script.google.com/macros/s/AKfycbwa4gr4gMv5VJO63_BZXb7nVmbL7UMujgTbNgPBdoU-hlXtPQiO9aXUcuT8rYcWGnIx/exec";
 
-      alert(`Thanks ${formData.name}, I will shortly connect with you!`);
+      const response = await fetch(scriptURL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
+
+      const result = await response.json();
+      if (result.status === "success") {
+        alert(`Thanks ${formData.name}, I will shortly connect with you!`);
+      } else {
+        alert(`Error: ${result.message}`);
+      }
+
     } catch (error) {
       console.error("Error submitting the form:", error);
-      alert("Backend server was not running while submitting the form.");
+      alert("Form submission failed.");
     }
 
-    setFormData({});
+    setFormData({
+      name: "",
+      email: "",
+      message: ""
+    });
   };
 
   // Animation for the form section
@@ -62,10 +77,13 @@ export default function Contactus() {
                 <Col md={4}>
                   <animated.div style={springProps}>
                     <div className="contacts-form" data-aos="fade-up">
-                      <form onSubmit={handleSubmit}> {/* Updated to handle submit event */}
+                      <form onSubmit={handleSubmit}>
                         <div className="input-container d-flex flex-column">
                           <label htmlFor="username" className="label-class">
-                            Full Name
+                          git add .
+git commit -m "Initial commit"
+git branch -M main
+git push -u origin main
                           </label>
                           <input
                             type="text"
@@ -73,7 +91,7 @@ export default function Contactus() {
                             id="username"
                             name="name"
                             placeholder="Enter your name"
-                            value={formData.name || ""}
+                            value={formData.name}
                             onChange={handleChange}
                           />
                         </div>
@@ -87,7 +105,7 @@ export default function Contactus() {
                             name="email"
                             id="email"
                             placeholder="Enter email"
-                            value={formData.email || ""}
+                            value={formData.email}
                             onChange={handleChange}
                           />
                         </div>
@@ -101,7 +119,7 @@ export default function Contactus() {
                             name="message"
                             rows="3"
                             placeholder="Enter message"
-                            value={formData.message || ""}
+                            value={formData.message}
                             onChange={handleChange}
                           />
                         </div>
@@ -130,7 +148,7 @@ export default function Contactus() {
                       </p>
                     </a>
                     <a
-                      href="tel:+919905867487" // Fixed to use tel protocol for phone links
+                      href="tel:+919905867487"
                       className="personal-details"
                     >
                       <div className="detailsIcon">
@@ -146,9 +164,6 @@ export default function Contactus() {
                         Bhopal, Madhya Pradesh
                       </p>
                     </div>
-                  </div>
-                  <div className="contact-map">
-                    {/* Uncomment and include your Google Map iframe here */}
                   </div>
                 </Col>
               </Row>
