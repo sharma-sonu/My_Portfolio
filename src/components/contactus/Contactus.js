@@ -205,7 +205,7 @@ export default function Contactus() {
 
     try {
       // Google Apps Script Web App URL
-      const scriptURL = "https://script.google.com/macros/s/AKfycbzwhBtyWLk1LLmr0NGkzIV4rT1jyQexWkERdh55yno/dev";
+      const scriptURL = "https://script.google.com/macros/s/AKfycbwDkrrImq265We41gxsaKBT4bmJlnNHk84TBcY2DIDM8cbz4TyPgTwu1EF9cfCZzO71/exec";
 //
       // Submit form data
       const response = await fetch(scriptURL, {
