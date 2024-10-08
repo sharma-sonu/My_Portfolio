@@ -67,7 +67,10 @@ function ExperienceJourney() {
             Web Development (Frontend Developer)
           </h6>
           <p>
-            • Proficient in developing, deploying, and managing computerized systems that gather, retain, evaluate, and exhibit data to facilitate the achievement of organizational aims and objectives.
+            
+          • Developed a portfolio website to showcase my projects, skills, and achievements.
+          • Languages used: HTML, CSS, Javascript; Framework: React.js; Tool: VS Code.
+
           </p>
         </VerticalTimelineElement>
 

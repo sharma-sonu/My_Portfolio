@@ -5,7 +5,7 @@ import { useSpring, animated } from "@react-spring/web";
 import nyc from "../../images/nyc.png";
 import ci from "../../images/onboarding.jpeg";
 import eco from "../../images/eco.png";
-import pp from "../../images/nyc.png";
+import pp from "../../images/portfolio.png";
 import { FaCode } from "react-icons/fa";
 
 export default function ProjectPage() {
