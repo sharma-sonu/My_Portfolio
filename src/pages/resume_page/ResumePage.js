@@ -11,7 +11,7 @@ import { useSpring, animated } from "@react-spring/web";  // Updated import
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
-const resumeLink = "#github link";
+const resumeLink = "https://github.com/sharma-sonu/My_Portfolio/blob/main/src/assets/sonu_Resume%20(2).pdf";
 
 function Resume() {
   const [width, setWidth] = useState(1200);
