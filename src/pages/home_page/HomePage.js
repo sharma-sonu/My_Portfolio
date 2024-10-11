@@ -25,7 +25,7 @@ export default function Home() {
         <Container className="home-content">
           <Row>
             <Col md={8} className="home-header">
-              <animated.h1 className="heading" style={{ paddingBottom: 15, fontSize: "100px", ...headerSpring }}>
+              <animated.h1 className="heading" style={{ paddingBottom: 15, fontSize: "80px", ...headerSpring }}>
                 Hi There!{" "}
                 <span className="wave" role="img" aria-label="wave">
                   👋🏻

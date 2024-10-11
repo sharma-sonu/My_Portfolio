@@ -43,10 +43,10 @@ function Resume() {
                 </Document>
               </div>
               <div className="d-flex justify-content-center">
-                <Button variant="primary" href={pdf} target="_blank">
+                {/* <Button variant="primary" href={pdf} target="_blank">
                   <AiOutlineDownload />
                   &nbsp;Download Resume
-                </Button>
+                </Button> */}
               </div>
             </div>
           </Container>
