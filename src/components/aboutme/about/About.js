@@ -37,17 +37,16 @@ const About = () => {
           <Col md={7}>
             <animated.div style={fadeProps}>
               <p className="home-about-body">
-                My name is <b className="purple">Sonu Sharma </b>
-                and I am a <b className="purple"> </b>
-                student at <b className="purple">Oriental Institute of Science and technology</b>
-                Bhopal.
+                I am <b className="purple">Sonu Sharma </b>
+                student at <b className="purple">Oriental Institute of Science and technology </b>
+              Bhopal.
                 <br />
                 <br />
-                I am proficient in various programming languages such as &nbsp;
+                I am proficient in various programming languages and techstack such as &nbsp;
                 <b className="purple"> C, Java, HTML, CSS and JavaScript. </b>
                 <br />
                 <br />
-                I also have experience working with frameworks and libraries such as &nbsp;
+                I also working with frameworks and libraries such as &nbsp;
                 <b className="purple"> NodeJS, ReactJS </b>
                 <br />
                 <br />
