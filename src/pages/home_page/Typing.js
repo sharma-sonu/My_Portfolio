@@ -8,7 +8,6 @@ function Typing() {
                 strings: [
                     "Electronic Engineer",
                     "Web Developer",
-                    "Java Developer",
                 ],
                 autoStart: true,
                 loop: true,

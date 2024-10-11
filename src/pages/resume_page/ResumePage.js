@@ -33,10 +33,10 @@ function Resume() {
             </animated.div>
             <div className="certificate-section" id="about">
               <div className="d-flex justify-content-center mt-4">
-                <Button variant="primary" href={pdf} target="_blank">
+                {/* <Button variant="primary" href={pdf} target="_blank">
                   <AiOutlineDownload />
                   &nbsp;Download Resume
-                </Button>
+                </Button> */}
               </div>
               <div className="resume d-flex justify-content-center">
                 <Document file={resumeLink}>
