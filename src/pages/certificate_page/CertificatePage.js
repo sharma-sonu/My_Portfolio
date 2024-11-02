@@ -7,7 +7,6 @@ import ucsc from "../../images/networking_internship.jpg";
 import ufm from "../../images/oasis.jpg";
 import Cisco_networking from "../../images/Cisco_networking.jpg";
 import nh from "../../images/Cisco_Javascript.jpg";
-import cbta from "../../images/CBT&A.pdf";
 import Particle from "../../Particle";
 
 export default function CertificatePage() {
@@ -43,7 +42,7 @@ export default function CertificatePage() {
                         image={ufm}
                         title="Internship: Web Development"
                         subtitle="- Oasis Infobyte"
-                        pdfLink={cbta}
+                        pdfLink="#"
                       />
                     </Col>
 

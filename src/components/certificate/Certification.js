@@ -6,7 +6,6 @@ import { useSpring, animated } from "@react-spring/web"; // Ensure correct impor
 import info_java_certi from "../../images/JavaFondationCertification.jpg"; // Certification_1
 import ufm from "../../images/DBMS_1.jpg"; // Certification_2
 import ufn from "../../images/DBMS_2.jpg"; // Certification_3
-import cbta from "../../images/CBT&A.pdf"; // Link for one of the certifications
 import { Link } from "react-router-dom";
 import { HiArrowRight } from "react-icons/hi";
 
@@ -37,7 +36,7 @@ export default function Certification() {
                     img: ufm,
                     title: "DBMS_1",
                     subtitle: "- Infosys Springboard",
-                    link: cbta,
+                    link: "#",
                   },
                   {
                     img: ufn,

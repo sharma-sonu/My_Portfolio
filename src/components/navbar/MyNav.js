@@ -3,6 +3,7 @@ import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
 import { ImBlog } from "react-icons/im";
+import logo from "../../images/logo.png"; 
 import {
   AiFillStar,
   AiOutlineHome,
@@ -35,7 +36,7 @@ export default function MyNav() {
       <Container>
         <Navbar.Brand href="/">
           <div className="d-flex flex-row justify-content-between">
-            <img src="./portfolio.png" className="img-fluid logo" alt="brand" />
+            <img src={logo} className="img-fluid logo" alt="brand" />
             <h5
               id="navhead"
               style={{

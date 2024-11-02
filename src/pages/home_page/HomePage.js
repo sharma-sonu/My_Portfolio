@@ -6,7 +6,7 @@ import Particle from "../../Particle";
 import Typing from "./Typing";
 import Tilt from "react-parallax-tilt";
 import AboutmeContainer from "../../components/aboutme/aboutmeContainer";
-import { useSpring, animated } from "@react-spring/web"; // Updated import for react-spring
+import { useSpring, animated } from "@react-spring/web"; 
 import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { FaLinkedinIn, FaGoogle } from "react-icons/fa";
 import Certification from "../../components/certificate/Certification";
@@ -45,7 +45,7 @@ export default function Home() {
                 <ul className="homeaboutsociallinks">
                   <li className="socialicons">
                     <a
-                      href="#" //https://github.com/sharma-sonu
+                      href="https://github.com/sharma-sonu" 
                       target="_blank"
                       rel="noopener noreferrer"
                       className="iconcolour homesocialicons"
