@@ -69,7 +69,7 @@ const AnimatedCertificate = ({ image, pdfLink }) => {
         <a href={pdfLink} target="_blank" rel="noopener noreferrer">
           <div className="cert-header">
             <img
-              className="logo_img"
+              className="_img"
               src={image}
               alt="Certificate"
               style={{ width: "100%", height: "auto" }}

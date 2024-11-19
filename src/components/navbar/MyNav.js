@@ -39,6 +39,11 @@ export default function MyNav() {
             <img src={logo} className="img-fluid logo" alt="brand" />
             <h5
               id="navhead"
+              // style={{
+              //   marginLeft: "21px",
+              //   paddingTop: "6px",
+              //   color: "#fbd9ad",
+              // }}
               style={{
                 marginLeft: "21px",
                 paddingTop: "6px",
